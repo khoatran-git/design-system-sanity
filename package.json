@@ -1,5 +1,5 @@
 {
-  "name": "studio-group-design-system",
+  "name": "group-design-system-studio",
   "version": "1.0.0",
   "description": "Sanity Studio for Group Design System - visual editor for component documentation, foundations, and resources",
   "main": "sanity.config.js",
@@ -19,6 +19,9 @@
   ],
   "author": "Group Design System",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@sanity/cli": "^5.14.1",
     "@sanity/vision": "^3.0.0",

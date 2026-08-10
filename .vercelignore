@@ -1,0 +1,10 @@
+.git
+.env.local
+.env.*.local
+node_modules
+npm-debug.log
+.DS_Store
+.next
+dist
+*.log
+.sanity

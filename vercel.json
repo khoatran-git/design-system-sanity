@@ -1,0 +1,19 @@
+{
+  "name": "group-design-system-studio",
+  "buildCommand": "sanity build",
+  "outputDirectory": "dist",
+  "env": {
+    "SANITY_STUDIO_PROJECT_ID": {
+      "description": "Your Sanity project ID"
+    },
+    "SANITY_STUDIO_DATASET": {
+      "description": "Your Sanity dataset (usually 'production')"
+    }
+  },
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
+}
