@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "project": {
+    "name": "Group Design System"
+  },
+  "api": {
+    "projectId": "q8ijpuq2",
+    "dataset": "production"
+  }
+}

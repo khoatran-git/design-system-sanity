@@ -1,0 +1,21 @@
+{
+  "name": "studio-group-design-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/cli": "^5.14.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sanity": "^5.31.1"
+  }
+}
