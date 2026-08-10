@@ -1,21 +1,32 @@
 {
   "name": "studio-group-design-system",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sanity Studio for Group Design System - visual editor for component documentation, foundations, and resources",
+  "main": "sanity.config.js",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy"
+    "deploy": "sanity deploy",
+    "preview": "sanity preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "sanity",
+    "cms",
+    "design-system",
+    "components",
+    "documentation"
+  ],
+  "author": "Group Design System",
+  "license": "MIT",
   "dependencies": {
     "@sanity/cli": "^5.14.1",
+    "@sanity/vision": "^3.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "sanity": "^5.31.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest"
   }
 }
