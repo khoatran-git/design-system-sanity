@@ -86,13 +86,24 @@ export default {
               name: 'title',
               title: 'Example Title',
               type: 'string',
+              description: 'Optional title for this code example',
             },
             {
               name: 'language',
               title: 'Language',
               type: 'string',
               options: {
-                list: ['javascript', 'typescript', 'jsx', 'tsx', 'html', 'css', 'scss', 'json'],
+                list: [
+                  {title: 'JavaScript', value: 'javascript'},
+                  {title: 'TypeScript', value: 'typescript'},
+                  {title: 'JSX', value: 'jsx'},
+                  {title: 'TSX', value: 'tsx'},
+                  {title: 'HTML', value: 'html'},
+                  {title: 'CSS', value: 'css'},
+                  {title: 'SCSS', value: 'scss'},
+                  {title: 'JSON', value: 'json'},
+                ],
+                layout: 'dropdown',
               },
               initialValue: 'jsx',
             },
@@ -101,18 +112,28 @@ export default {
               title: 'Code',
               type: 'text',
               rows: 10,
+              description: 'Enter your code here',
             },
             {
               name: 'description',
               title: 'Description',
               type: 'text',
               rows: 3,
+              description: 'Optional description explaining this code example',
             },
           ],
           preview: {
             select: {
               title: 'title',
-              subtitle: 'language',
+              language: 'language',
+              code: 'code',
+            },
+            prepare({title, language, code}) {
+              return {
+                title: title || 'Code Example',
+                subtitle: language || 'Code',
+                media: null,
+              }
             },
           },
         },
@@ -126,22 +147,34 @@ export default {
               name: 'title',
               title: 'Preview Title',
               type: 'string',
+              description: 'Title for this component preview',
             },
             {
               name: 'description',
               title: 'Description',
               type: 'text',
+              rows: 3,
+              description: 'Description of what this preview shows',
             },
             {
               name: 'html',
               title: 'HTML Preview',
               type: 'text',
               rows: 8,
+              description: 'HTML code for the component preview',
             },
           ],
           preview: {
             select: {
               title: 'title',
+              description: 'description',
+            },
+            prepare({title, description}) {
+              return {
+                title: title || 'Component Preview',
+                subtitle: description || 'Preview',
+                media: null,
+              }
             },
           },
         },
@@ -188,20 +221,24 @@ export default {
         // Image block
         {
           type: 'image',
+          title: 'Image',
           options: {
             hotspot: true,
+            storeOriginalFilename: false,
           },
           fields: [
             {
               name: 'alt',
               type: 'string',
               title: 'Alternative Text',
-              validation: (Rule) => Rule.required(),
+              description: 'Important for accessibility and SEO',
+              validation: (Rule) => Rule.required().error('Alt text is required for accessibility'),
             },
             {
               name: 'caption',
               type: 'string',
               title: 'Caption',
+              description: 'Optional caption displayed below the image',
             },
           ],
         },

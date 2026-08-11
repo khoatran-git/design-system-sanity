@@ -46,4 +46,18 @@ export default defineConfig({
   document: {
     actions: (prev) => prev,
   },
+
+  // Form configuration to prevent modal issues
+  form: {
+    // Reduce debounce time to make editing more responsive
+    patch: {
+      // Prevents aggressive patching that can cause modal closures
+      throttleMS: 200,
+    },
+  },
+  
+  // Tools configuration
+  tools: (prev) => {
+    return prev
+  },
 })
