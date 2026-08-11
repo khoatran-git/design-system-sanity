@@ -31,9 +31,7 @@ export default defineConfig({
         S.list()
           .title('Content')
           .items([
-            S.documentTypeListItem('component').title('Components'),
-            S.documentTypeListItem('foundation').title('Foundations'),
-            S.documentTypeListItem('resource').title('Resources'),
+            S.documentTypeListItem('simpleComponent').title('Simple Components'),
           ]),
     }),
     visionTool(),
