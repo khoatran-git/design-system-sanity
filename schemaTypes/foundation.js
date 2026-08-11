@@ -54,8 +54,9 @@ export default {
           options: { hotspot: true },
         },
         {
-          type: 'code',
-          options: { language: 'tsx' },
+          type: 'text',
+          title: 'Code Block',
+          rows: 6,
         },
         {
           type: 'object',
