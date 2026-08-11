@@ -20,7 +20,7 @@ export default defineConfig({
   projectId,
   dataset,
   
-  // Enable real-time updates and optimistic UI
+  // Disable CDN for immediate updates
   useCdn: false,
   
   // Configure plugins for content management
@@ -46,18 +46,10 @@ export default defineConfig({
   document: {
     actions: (prev) => prev,
   },
-
-  // Form configuration to prevent modal issues
-  form: {
-    // Reduce debounce time to make editing more responsive
-    patch: {
-      // Prevents aggressive patching that can cause modal closures
-      throttleMS: 200,
-    },
-  },
   
-  // Tools configuration
-  tools: (prev) => {
-    return prev
+  // Disable problematic features that can cause modal issues
+  beta: {
+    // Disable optimistic updates that can cause race conditions
+    enableOptimisticUpdates: false,
   },
 })
