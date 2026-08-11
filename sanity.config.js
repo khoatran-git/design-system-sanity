@@ -15,8 +15,8 @@ if (!dataset) {
 }
 
 export default defineConfig({
-  name: 'default',
-  title: 'Group Design System v2',
+  name: 'fresh-start',
+  title: 'Fresh Studio',
   projectId,
   dataset,
   

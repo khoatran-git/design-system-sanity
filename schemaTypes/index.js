@@ -1,5 +1,3 @@
-import component from './component'
-import foundation from './foundation'
-import resource from './resource'
+import simpleComponent from './simpleComponent'
 
-export const schemaTypes = [component, foundation, resource]
+export const schemaTypes = [simpleComponent]
