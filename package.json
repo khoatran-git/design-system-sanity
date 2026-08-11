@@ -5,10 +5,12 @@
   "main": "sanity.config.js",
   "scripts": {
     "dev": "sanity dev",
-    "start": "sanity start",
+    "start": "sanity start", 
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "preview": "sanity preview"
+    "preview": "sanity preview",
+    "migrate-foundations": "node migrate-foundations.js",
+    "import-foundations": "sanity dataset import foundations-data.json production --replace"
   },
   "keywords": [
     "sanity",
