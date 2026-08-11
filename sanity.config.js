@@ -29,9 +29,9 @@ export default defineConfig({
       // Define default document structure
       structure: (S) =>
         S.list()
-          .title('Content')
+          .title('Design System')
           .items([
-            S.documentTypeListItem('simpleComponent').title('Simple Components'),
+            S.documentTypeListItem('simpleComponent').title('Components & Documentation'),
           ]),
     }),
     visionTool(),
