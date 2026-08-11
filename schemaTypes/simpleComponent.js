@@ -25,14 +25,16 @@ export default {
       type: 'text',
       rows: 3,
     },
+    
+    // TAB 1: OVERVIEW CONTENT
     {
-      name: 'content',
-      title: 'Rich Content',
+      name: 'overviewContent',
+      title: 'Overview Content',
+      description: 'Rich content for the Overview tab - main component documentation',
       type: 'array',
       of: [
         {
           type: 'block',
-          // Define which block styles are available
           styles: [
             {title: 'Normal', value: 'normal'},
             {title: 'Heading 1', value: 'h1'},
@@ -41,12 +43,10 @@ export default {
             {title: 'Heading 4', value: 'h4'},
             {title: 'Quote', value: 'blockquote'},
           ],
-          // Define which list types are available
           lists: [
             {title: 'Bullet List', value: 'bullet'},
             {title: 'Number List', value: 'number'},
           ],
-          // Define which marks/decorators are available
           marks: {
             decorators: [
               {title: 'Strong', value: 'strong'},
@@ -61,151 +61,103 @@ export default {
                 type: 'object',
                 title: 'External Link',
                 fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL'
-                  },
-                  {
-                    title: 'Open in new tab',
-                    name: 'blank',
-                    type: 'boolean'
-                  }
+                  {name: 'href', type: 'url', title: 'URL'},
+                  {name: 'blank', type: 'boolean', title: 'Open in new tab'}
                 ]
               },
             ]
           }
         },
-        // Custom block for code examples
+        {
+          type: 'image',
+          title: 'Image',
+          options: {hotspot: true},
+          fields: [
+            {name: 'alt', type: 'string', title: 'Alt Text', validation: (Rule) => Rule.required()},
+            {name: 'caption', type: 'string', title: 'Caption'},
+          ],
+        },
+      ],
+    },
+    
+    // TAB 2: CODE CONTENT
+    {
+      name: 'codeContent',
+      title: 'Code Tab Content',
+      description: 'Code examples, usage instructions, and API documentation',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Heading 2', value: 'h2'},
+            {title: 'Heading 3', value: 'h3'},
+          ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+              {title: 'Code', value: 'code'},
+            ],
+          }
+        },
         {
           type: 'object',
           name: 'codeBlock',
           title: 'Code Example',
           fields: [
-            {
-              name: 'title',
-              title: 'Example Title',
-              type: 'string',
-              description: 'Optional title for this code example',
-            },
+            {name: 'title', title: 'Example Title', type: 'string'},
             {
               name: 'language',
               title: 'Language',
               type: 'string',
               options: {
-                list: [
-                  {title: 'JavaScript', value: 'javascript'},
-                  {title: 'TypeScript', value: 'typescript'},
-                  {title: 'JSX', value: 'jsx'},
-                  {title: 'TSX', value: 'tsx'},
-                  {title: 'HTML', value: 'html'},
-                  {title: 'CSS', value: 'css'},
-                  {title: 'SCSS', value: 'scss'},
-                  {title: 'JSON', value: 'json'},
-                ],
-                layout: 'dropdown',
+                list: ['javascript', 'typescript', 'jsx', 'tsx', 'html', 'css', 'scss', 'json'],
               },
               initialValue: 'jsx',
             },
-            {
-              name: 'code',
-              title: 'Code',
-              type: 'text',
-              rows: 10,
-              description: 'Enter your code here',
-            },
-            {
-              name: 'description',
-              title: 'Description',
-              type: 'text',
-              rows: 3,
-              description: 'Optional description explaining this code example',
-            },
+            {name: 'code', title: 'Code', type: 'text', rows: 10},
+            {name: 'description', title: 'Description', type: 'text', rows: 3},
           ],
           preview: {
-            select: {
-              title: 'title',
-              language: 'language',
-              code: 'code',
-            },
-            prepare({title, language, code}) {
+            select: {title: 'title', language: 'language'},
+            prepare({title, language}) {
               return {
                 title: title || 'Code Example',
                 subtitle: language || 'Code',
-                media: null,
               }
             },
           },
         },
-        // Custom block for component preview
         {
           type: 'object',
-          name: 'componentPreview',
-          title: 'Component Preview',
+          name: 'apiReference',
+          title: 'API Reference',
           fields: [
+            {name: 'title', title: 'API Title', type: 'string'},
+            {name: 'description', title: 'Description', type: 'text', rows: 3},
             {
-              name: 'title',
-              title: 'Preview Title',
-              type: 'string',
-              description: 'Title for this component preview',
-            },
-            {
-              name: 'description',
-              title: 'Description',
-              type: 'text',
-              rows: 3,
-              description: 'Description of what this preview shows',
-            },
-            {
-              name: 'html',
-              title: 'HTML Preview',
-              type: 'text',
-              rows: 8,
-              description: 'HTML code for the component preview',
-            },
-          ],
-          preview: {
-            select: {
-              title: 'title',
-              description: 'description',
-            },
-            prepare({title, description}) {
-              return {
-                title: title || 'Component Preview',
-                subtitle: description || 'Preview',
-                media: null,
-              }
-            },
-          },
-        },
-        // Custom block for design tokens
-        {
-          type: 'object',
-          name: 'designTokens',
-          title: 'Design Tokens',
-          fields: [
-            {
-              name: 'title',
-              title: 'Token Category',
-              type: 'string',
-              initialValue: 'CSS Variables',
-            },
-            {
-              name: 'tokens',
-              title: 'Tokens',
+              name: 'props',
+              title: 'Props/Parameters',
               type: 'array',
               of: [
                 {
                   type: 'object',
                   fields: [
-                    {name: 'name', type: 'string', title: 'Variable Name'},
-                    {name: 'value', type: 'string', title: 'Value'},
-                    {name: 'description', type: 'string', title: 'Description'},
+                    {name: 'name', type: 'string', title: 'Prop Name'},
+                    {name: 'type', type: 'string', title: 'Type'},
+                    {name: 'required', type: 'boolean', title: 'Required'},
+                    {name: 'description', type: 'text', title: 'Description', rows: 2},
+                    {name: 'defaultValue', type: 'string', title: 'Default Value'},
                   ],
                   preview: {
-                    select: {
-                      title: 'name',
-                      subtitle: 'value',
+                    select: {name: 'name', type: 'type', required: 'required'},
+                    prepare({name, type, required}) {
+                      return {
+                        title: name,
+                        subtitle: `${type}${required ? ' (required)' : ''}`,
+                      }
                     },
                   },
                 },
@@ -213,37 +165,86 @@ export default {
             },
           ],
           preview: {
-            select: {
-              title: 'title',
+            select: {title: 'title'},
+            prepare({title}) {
+              return {
+                title: title || 'API Reference',
+                subtitle: 'Component API',
+              }
             },
           },
-        },
-        // Image block
-        {
-          type: 'image',
-          title: 'Image',
-          options: {
-            hotspot: true,
-            storeOriginalFilename: false,
-          },
-          fields: [
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative Text',
-              description: 'Important for accessibility and SEO',
-              validation: (Rule) => Rule.required().error('Alt text is required for accessibility'),
-            },
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Caption',
-              description: 'Optional caption displayed below the image',
-            },
-          ],
         },
       ],
     },
+    
+    // TAB 3: WHAT'S NEW CONTENT  
+    {
+      name: 'whatsNewContent',
+      title: 'What\'s New Content',
+      description: 'Changelog, updates, version history, and breaking changes',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Heading 2', value: 'h2'},
+            {title: 'Heading 3', value: 'h3'},
+          ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+              {title: 'Code', value: 'code'},
+            ],
+          }
+        },
+        {
+          type: 'object',
+          name: 'changelogEntry',
+          title: 'Changelog Entry',
+          fields: [
+            {name: 'version', title: 'Version', type: 'string', placeholder: 'e.g., v1.2.0'},
+            {name: 'date', title: 'Release Date', type: 'date'},
+            {
+              name: 'type',
+              title: 'Change Type',
+              type: 'string',
+              options: {
+                list: [
+                  {title: '🚀 New Feature', value: 'feature'},
+                  {title: '🐛 Bug Fix', value: 'fix'},
+                  {title: '💥 Breaking Change', value: 'breaking'},
+                  {title: '✨ Improvement', value: 'improvement'},
+                  {title: '📦 Deprecation', value: 'deprecation'},
+                  {title: '🔧 Maintenance', value: 'maintenance'},
+                ],
+              },
+            },
+            {name: 'description', title: 'Description', type: 'text', rows: 3},
+          ],
+          preview: {
+            select: {version: 'version', type: 'type', description: 'description'},
+            prepare({version, type, description}) {
+              const typeLabels = {
+                feature: '🚀',
+                fix: '🐛',
+                breaking: '💥',
+                improvement: '✨',
+                deprecation: '📦',
+                maintenance: '🔧'
+              }
+              return {
+                title: `${typeLabels[type] || '📝'} ${version || 'Version Update'}`,
+                subtitle: description?.substring(0, 60) || 'No description',
+              }
+            },
+          },
+        },
+      ],
+    },
+
+    // METADATA FIELDS
     {
       name: 'category',
       title: 'Category',
