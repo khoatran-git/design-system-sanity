@@ -23,11 +23,10 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@sanity/cli": "^5.14.1",
-    "@sanity/vision": "^3.0.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "sanity": "^5.31.1"
+    "@sanity/vision": "^3.68.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.68.0"
   },
   "devDependencies": {
     "@types/node": "latest"
