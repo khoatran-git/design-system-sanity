@@ -4,7 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'q8ijpuq2'
-const dataset = process.env.SANITY_STUDIO_DATASET || 'production-v2'
+const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 if (!projectId) {
   throw new Error('Missing SANITY_STUDIO_PROJECT_ID environment variable')
