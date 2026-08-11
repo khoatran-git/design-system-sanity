@@ -16,7 +16,7 @@ if (!dataset) {
 
 export default defineConfig({
   name: 'default',
-  title: 'Group Design System',
+  title: 'Group Design System v2',
   projectId,
   dataset,
   
