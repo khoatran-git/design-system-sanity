@@ -10,7 +10,10 @@
     "deploy": "sanity deploy",
     "preview": "sanity preview",
     "migrate-foundations": "node migrate-foundations.js",
-    "import-foundations": "sanity dataset import foundations-data.json production --replace"
+    "import-foundations": "sanity dataset import foundations-data.json production --replace",
+    "import-get-started": "sanity dataset import get-started-data.json production",
+    "import-resources": "sanity dataset import resources-data.json production",
+    "import-all": "npm run import-foundations && npm run import-get-started && npm run import-resources"
   },
   "keywords": [
     "sanity",
