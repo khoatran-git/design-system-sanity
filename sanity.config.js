@@ -32,6 +32,7 @@ export default defineConfig({
           .title('Design System')
           .items([
             S.documentTypeListItem('simpleComponent').title('Components & Documentation'),
+            S.documentTypeListItem('guideline').title('Design Guidelines'),
           ]),
     }),
     visionTool(),
