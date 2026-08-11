@@ -26,13 +26,17 @@ export default defineConfig({
   // Configure plugins for content management
   plugins: [
     structureTool({
-      // Define default document structure
+      // Define default document structure matching Next.js sidebar
       structure: (S) =>
         S.list()
           .title('Design System')
           .items([
-            S.documentTypeListItem('simpleComponent').title('Components & Documentation'),
-            S.documentTypeListItem('guideline').title('Design Guidelines'),
+            S.documentTypeListItem('getStarted').title('Get Started'),
+            S.documentTypeListItem('foundation').title('Foundations'),
+            S.documentTypeListItem('simpleComponent').title('Components'),
+            S.documentTypeListItem('resource').title('Resources'),
+            S.divider(),
+            S.documentTypeListItem('guideline').title('Guidelines (Legacy)'),
           ]),
     }),
     visionTool(),
