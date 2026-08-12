@@ -1,6 +1,7 @@
 {
   "name": "group-design-system-studio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Sanity Studio for Group Design System - visual editor for component documentation, foundations, and resources",
   "main": "sanity.config.js",
   "scripts": {
@@ -10,6 +11,7 @@
     "deploy": "sanity deploy",
     "preview": "sanity preview",
     "migrate-foundations": "node migrate-foundations.js",
+    "migrate-patterns": "node migrate-patterns.js",
     "import-foundations": "sanity dataset import foundations-data.json production --replace",
     "import-get-started": "sanity dataset import get-started-data.json production",
     "import-resources": "sanity dataset import resources-data.json production",
