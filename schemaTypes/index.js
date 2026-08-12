@@ -1,9 +1,9 @@
-import simpleComponent from './simpleComponent'
-import guideline from './guideline'
-import getStarted from './getStarted'
-import foundation from './foundation'
-import resource from './resource'
-import pattern from './pattern'
+import simpleComponent from './simpleComponent.js'
+import guideline from './guideline.js'
+import getStarted from './getStarted.js'
+import foundation from './foundation.js'
+import resource from './resource.js'
+import pattern from './pattern.js'
 
 export const schemaTypes = [
   getStarted,
