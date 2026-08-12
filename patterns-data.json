@@ -1,0 +1,347 @@
+[
+  {
+    "_type": "pattern",
+    "title": "Sign up",
+    "slug": {
+      "_type": "slug",
+      "current": "sign-up"
+    },
+    "description": "User registration and account creation patterns with best practices for onboarding new users effectively.",
+    "content": [
+      {
+        "_type": "block",
+        "_key": "signup-overview",
+        "style": "h2",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "signup-title",
+            "text": "Overview"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-desc",
+        "style": "normal",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "signup-text",
+            "text": "The sign-up pattern is crucial for user acquisition and first impressions. A well-designed registration flow reduces friction, builds trust, and sets the foundation for a positive user experience."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-principles",
+        "style": "h3",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "principles-title",
+            "text": "Key Principles"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-list",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "item1",
+            "text": "Minimize required fields - only ask for essential information"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-list2",
+        "style": "normal",
+        "listItem": "bullet", 
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "item2",
+            "text": "Provide clear validation feedback in real-time"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-list3",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "item3", 
+            "text": "Offer social login options to reduce friction"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "signup-list4",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "item4",
+            "text": "Include trust signals and privacy assurance"
+          }
+        ]
+      },
+      {
+        "_type": "codeBlock",
+        "_key": "signup-code",
+        "title": "Basic Sign-up Form",
+        "language": "jsx",
+        "code": "import { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport function SignUpForm() {\n  return (\n    <form className=\"space-y-6\">\n      <div className=\"space-y-2\">\n        <Label htmlFor=\"email\">Email address</Label>\n        <Input \n          id=\"email\" \n          type=\"email\" \n          placeholder=\"Enter your email\"\n          required \n        />\n      </div>\n      \n      <div className=\"space-y-2\">\n        <Label htmlFor=\"password\">Password</Label>\n        <Input \n          id=\"password\" \n          type=\"password\" \n          placeholder=\"Create a password\"\n          required \n        />\n      </div>\n      \n      <div className=\"flex items-center space-x-2\">\n        <Checkbox id=\"terms\" required />\n        <Label htmlFor=\"terms\" className=\"text-sm\">\n          I agree to the Terms of Service and Privacy Policy\n        </Label>\n      </div>\n      \n      <Button type=\"submit\" className=\"w-full\">\n        Create Account\n      </Button>\n      \n      <div className=\"text-center\">\n        <p className=\"text-sm text-muted-foreground\">\n          Already have an account?{' '}\n          <a href=\"/login\" className=\"text-primary hover:underline\">\n            Sign in\n          </a>\n        </p>\n      </div>\n    </form>\n  )\n}",
+        "description": "A minimal sign-up form with email, password, and terms acceptance."
+      }
+    ],
+    "patternType": "Authentication",
+    "complexity": "simple",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "_type": "pattern",
+    "title": "Login",
+    "slug": {
+      "_type": "slug",
+      "current": "login"
+    },
+    "description": "User authentication patterns including standard login, social authentication, and password recovery flows.",
+    "content": [
+      {
+        "_type": "block",
+        "_key": "login-overview",
+        "style": "h2",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "login-title",
+            "text": "Overview"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "login-desc",
+        "style": "normal", 
+        "children": [
+          {
+            "_type": "span",
+            "_key": "login-text",
+            "text": "Login patterns should balance security with usability. Users need to authenticate quickly and securely while maintaining trust in your platform."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "login-best-practices",
+        "style": "h3",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "best-practices-title",
+            "text": "Best Practices"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "login-list1",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "practice1",
+            "text": "Support both email and username login options"
+          }
+        ]
+      },
+      {
+        "_type": "block", 
+        "_key": "login-list2",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "practice2",
+            "text": "Provide clear error messages without revealing security details"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "login-list3", 
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "practice3",
+            "text": "Include 'Remember me' and 'Forgot password' options"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "login-list4",
+        "style": "normal", 
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "practice4",
+            "text": "Implement proper loading states and feedback"
+          }
+        ]
+      },
+      {
+        "_type": "codeBlock",
+        "_key": "login-code",
+        "title": "Standard Login Form",
+        "language": "jsx", 
+        "code": "import { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport function LoginForm() {\n  return (\n    <form className=\"space-y-6\">\n      <div className=\"space-y-2\">\n        <Label htmlFor=\"email\">Email or Username</Label>\n        <Input \n          id=\"email\" \n          type=\"text\" \n          placeholder=\"Enter your email or username\"\n          required \n        />\n      </div>\n      \n      <div className=\"space-y-2\">\n        <div className=\"flex items-center justify-between\">\n          <Label htmlFor=\"password\">Password</Label>\n          <a \n            href=\"/forgot-password\" \n            className=\"text-sm text-primary hover:underline\"\n          >\n            Forgot password?\n          </a>\n        </div>\n        <Input \n          id=\"password\" \n          type=\"password\" \n          placeholder=\"Enter your password\"\n          required \n        />\n      </div>\n      \n      <div className=\"flex items-center space-x-2\">\n        <Checkbox id=\"remember\" />\n        <Label htmlFor=\"remember\" className=\"text-sm\">\n          Remember me for 30 days\n        </Label>\n      </div>\n      \n      <Button type=\"submit\" className=\"w-full\">\n        Sign In\n      </Button>\n      \n      <div className=\"relative\">\n        <div className=\"absolute inset-0 flex items-center\">\n          <span className=\"w-full border-t\" />\n        </div>\n        <div className=\"relative flex justify-center text-xs uppercase\">\n          <span className=\"bg-background px-2 text-muted-foreground\">\n            Or continue with\n          </span>\n        </div>\n      </div>\n      \n      <div className=\"grid grid-cols-2 gap-4\">\n        <Button variant=\"outline\" type=\"button\">\n          Google\n        </Button>\n        <Button variant=\"outline\" type=\"button\">\n          GitHub\n        </Button>\n      </div>\n      \n      <div className=\"text-center\">\n        <p className=\"text-sm text-muted-foreground\">\n          Don't have an account?{' '}\n          <a href=\"/signup\" className=\"text-primary hover:underline\">\n            Sign up\n          </a>\n        </p>\n      </div>\n    </form>\n  )\n}",
+        "description": "Complete login form with social authentication options and proper navigation."
+      }
+    ],
+    "patternType": "Authentication", 
+    "complexity": "intermediate",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "_type": "pattern",
+    "title": "Payment",
+    "slug": {
+      "_type": "slug",
+      "current": "payment"
+    },
+    "description": "Secure payment flow patterns including form design, validation, and confirmation states for e-commerce transactions.",
+    "content": [
+      {
+        "_type": "block",
+        "_key": "payment-overview",
+        "style": "h2",
+        "children": [
+          {
+            "_type": "span", 
+            "_key": "payment-title",
+            "text": "Overview"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-desc",
+        "style": "normal",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "payment-text",
+            "text": "Payment patterns must prioritize security, clarity, and trust. Users need confidence in the process while completing transactions efficiently."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-security",
+        "style": "h3",
+        "children": [
+          {
+            "_type": "span",
+            "_key": "security-title",
+            "text": "Security & Trust Factors"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-list1",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "security1",
+            "text": "Display security badges and SSL certificates prominently"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-list2", 
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "security2",
+            "text": "Use clear progress indicators for multi-step checkout"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-list3",
+        "style": "normal",
+        "listItem": "bullet", 
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "security3",
+            "text": "Provide order summary and total cost transparency"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "payment-list4",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "children": [
+          {
+            "_type": "span",
+            "_key": "security4",
+            "text": "Support multiple payment methods and guest checkout"
+          }
+        ]
+      },
+      {
+        "_type": "codeBlock",
+        "_key": "payment-code",
+        "title": "Payment Form Component",
+        "language": "jsx",
+        "code": "import { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { Shield, CreditCard } from \"lucide-react\"\n\nexport function PaymentForm() {\n  return (\n    <div className=\"max-w-lg mx-auto space-y-6\">\n      {/* Order Summary */}\n      <div className=\"bg-muted/50 p-4 rounded-lg\">\n        <h3 className=\"font-semibold mb-3\">Order Summary</h3>\n        <div className=\"space-y-2 text-sm\">\n          <div className=\"flex justify-between\">\n            <span>Subtotal</span>\n            <span>$99.00</span>\n          </div>\n          <div className=\"flex justify-between\">\n            <span>Tax</span>\n            <span>$9.90</span>\n          </div>\n          <Separator />\n          <div className=\"flex justify-between font-semibold\">\n            <span>Total</span>\n            <span>$108.90</span>\n          </div>\n        </div>\n      </div>\n      \n      {/* Payment Form */}\n      <form className=\"space-y-6\">\n        <div className=\"space-y-4\">\n          <div className=\"flex items-center gap-2\">\n            <CreditCard className=\"h-5 w-5\" />\n            <h3 className=\"font-semibold\">Payment Information</h3>\n          </div>\n          \n          <div className=\"space-y-2\">\n            <Label htmlFor=\"card-number\">Card Number</Label>\n            <Input \n              id=\"card-number\" \n              type=\"text\" \n              placeholder=\"1234 5678 9012 3456\"\n              required \n            />\n          </div>\n          \n          <div className=\"grid grid-cols-2 gap-4\">\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"expiry\">Expiry Date</Label>\n              <Input \n                id=\"expiry\" \n                type=\"text\" \n                placeholder=\"MM/YY\"\n                required \n              />\n            </div>\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"cvv\">CVV</Label>\n              <Input \n                id=\"cvv\" \n                type=\"text\" \n                placeholder=\"123\"\n                required \n              />\n            </div>\n          </div>\n          \n          <div className=\"space-y-2\">\n            <Label htmlFor=\"name\">Cardholder Name</Label>\n            <Input \n              id=\"name\" \n              type=\"text\" \n              placeholder=\"John Doe\"\n              required \n            />\n          </div>\n        </div>\n        \n        <Separator />\n        \n        {/* Billing Address */}\n        <div className=\"space-y-4\">\n          <h3 className=\"font-semibold\">Billing Address</h3>\n          \n          <div className=\"grid grid-cols-2 gap-4\">\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"first-name\">First Name</Label>\n              <Input id=\"first-name\" required />\n            </div>\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"last-name\">Last Name</Label>\n              <Input id=\"last-name\" required />\n            </div>\n          </div>\n          \n          <div className=\"space-y-2\">\n            <Label htmlFor=\"address\">Address</Label>\n            <Input id=\"address\" placeholder=\"123 Main St\" required />\n          </div>\n          \n          <div className=\"grid grid-cols-3 gap-4\">\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"city\">City</Label>\n              <Input id=\"city\" required />\n            </div>\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"state\">State</Label>\n              <Select>\n                <SelectTrigger>\n                  <SelectValue placeholder=\"State\" />\n                </SelectTrigger>\n                <SelectContent>\n                  <SelectItem value=\"ca\">California</SelectItem>\n                  <SelectItem value=\"ny\">New York</SelectItem>\n                </SelectContent>\n              </Select>\n            </div>\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"zip\">ZIP</Label>\n              <Input id=\"zip\" placeholder=\"12345\" required />\n            </div>\n          </div>\n        </div>\n        \n        {/* Security Notice */}\n        <div className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n          <Shield className=\"h-4 w-4\" />\n          <span>Your payment information is encrypted and secure</span>\n        </div>\n        \n        <Button type=\"submit\" className=\"w-full\" size=\"lg\">\n          Complete Purchase - $108.90\n        </Button>\n      </form>\n    </div>\n  )\n}",
+        "description": "Complete payment form with order summary, card details, and billing address."
+      }
+    ],
+    "patternType": "E-commerce",
+    "complexity": "advanced",
+    "order": 3, 
+    "status": "published"
+  }
+]
