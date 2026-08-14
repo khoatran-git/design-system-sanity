@@ -246,20 +246,6 @@ export default {
 
     // METADATA FIELDS
     {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          'Components',
-          'Foundations',
-          'Patterns',
-          'Resources',
-          'Guidelines',
-        ],
-      },
-    },
-    {
       name: 'status',
       title: 'Status',
       type: 'string',
