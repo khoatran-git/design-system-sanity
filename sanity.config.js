@@ -33,10 +33,10 @@ export default defineConfig({
           .items([
             S.documentTypeListItem('getStarted').title('Get Started'),
             S.documentTypeListItem('foundation').title('Foundations'),
+            S.documentTypeListItem('style').title('Styles'),
             S.documentTypeListItem('simpleComponent').title('Components'),
+            S.documentTypeListItem('pattern').title('Patterns'),
             S.documentTypeListItem('resource').title('Resources'),
-            S.divider(),
-            S.documentTypeListItem('guideline').title('Guidelines (Legacy)'),
           ]),
     }),
     visionTool(),
