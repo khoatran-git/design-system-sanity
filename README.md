@@ -1,4 +1,4 @@
-# Sanity Studio - Group Design System
+# Sanity Studio - The Design Dictionary
 
 Visual editor for managing component documentation, foundations, and resources.
 

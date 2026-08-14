@@ -161,23 +161,6 @@ export default {
       ],
     },
     {
-      name: 'styleCategory',
-      title: 'Style Category',
-      type: 'string',
-      options: {
-        list: [
-          'Colors',
-          'Typography',
-          'Spacing',
-          'Layout',
-          'Animations',
-          'Shadows',
-          'Borders',
-          'Utilities',
-        ],
-      },
-    },
-    {
       name: 'order',
       title: 'Display Order',
       type: 'number',
@@ -202,22 +185,16 @@ export default {
       name: 'orderAsc',
       by: [{field: 'order', direction: 'asc'}]
     },
-    {
-      title: 'Style Category',
-      name: 'categoryAsc',
-      by: [{field: 'styleCategory', direction: 'asc'}]
-    },
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'styleCategory',
       status: 'status',
     },
-    prepare({title, subtitle, status}) {
+    prepare({title, status}) {
       return {
         title: title,
-        subtitle: `${status} • ${subtitle || 'Style'}`,
+        subtitle: `${status} • Style`,
       }
     },
   },

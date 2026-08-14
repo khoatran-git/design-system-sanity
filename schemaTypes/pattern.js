@@ -137,19 +137,6 @@ export default {
       },
     },
     {
-      name: 'complexity',
-      title: 'Complexity Level',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Simple', value: 'simple'},
-          {title: 'Intermediate', value: 'intermediate'},
-          {title: 'Advanced', value: 'advanced'},
-        ],
-      },
-      initialValue: 'simple',
-    },
-    {
       name: 'order',
       title: 'Display Order',
       type: 'number',
@@ -185,12 +172,11 @@ export default {
       title: 'title',
       subtitle: 'patternType',
       status: 'status',
-      complexity: 'complexity',
     },
-    prepare({title, subtitle, status, complexity}) {
+    prepare({title, subtitle, status}) {
       return {
         title: title,
-        subtitle: `${status} • ${subtitle} • ${complexity}`,
+        subtitle: `${status} • ${subtitle || 'Pattern'}`,
       }
     },
   },
