@@ -115,16 +115,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          'Principles',
-          'Governance',
-          'Design tokens',
-          'Typography', 
-          'Colours',
-          'Elevation',
-          'Motion',
-          'Usability',
-          'Accessibility',
-          'UX Writing',
+          'Philosophy',
+          'Design',
         ],
       },
     },
