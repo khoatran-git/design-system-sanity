@@ -12,6 +12,7 @@
     "preview": "sanity preview",
     "migrate-foundations": "node migrate-foundations.js",
     "migrate-patterns": "node migrate-patterns.js",
+    "update-categories": "node update-foundation-categories.js",
     "import-foundations": "sanity dataset import foundations-data.json production --replace",
     "import-get-started": "sanity dataset import get-started-data.json production",
     "import-resources": "sanity dataset import resources-data.json production",
