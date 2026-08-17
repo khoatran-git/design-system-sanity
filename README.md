@@ -1,4 +1,4 @@
-# Sanity Studio - The Design Dictionary
+# Sanity Studio - Sovico Design Dictionary
 
 Visual editor for managing component documentation, foundations, and resources.
 
